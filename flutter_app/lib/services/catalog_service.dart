@@ -208,7 +208,7 @@ class CatalogService {
     final targets = [
       name,
       ...alternatives,
-    ].map(_scanName).where((target) => target.length >= 2).toSet();
+    ].map(_scanName).where((target) => target.isNotEmpty).toSet();
     if (targets.isEmpty) return const [];
     final loading = _scanCatalogs.putIfAbsent(language, () async {
       final data = await _get(_uri(language, ['cards']));
@@ -244,7 +244,10 @@ class CatalogService {
         final candidate = _scanName(card.name);
         for (final target in targets) {
           final distance = _editDistance(target, candidate);
-          if (distance <= (target.length < 5 ? 1 : 3) && distance < score) {
+          final tolerance = target.length == 1
+              ? 0
+              : (target.length < 5 ? 1 : 3);
+          if (distance <= tolerance && distance < score) {
             score = distance;
           }
         }

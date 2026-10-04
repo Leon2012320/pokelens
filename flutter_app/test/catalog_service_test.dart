@@ -34,6 +34,25 @@ http.Response jsonResponse(Object value) => http.Response(
 void main() {
   group('Photo name matching', () {
     test(
+      'keeps single-character Korean names without matching other short names',
+      () async {
+        final service = CatalogService(
+          client: MockClient((request) async {
+            expect(request.url.path, '/v2/ko/cards');
+            return jsonResponse([
+              cardJson(id: 'sv03.5-151', name: '뮤'),
+              cardJson(id: 'sv03.5-152', name: '뮬'),
+            ]);
+          }),
+        );
+        addTearDown(service.dispose);
+        expect(
+          (await service.scanCandidates('뮤', language: 'ko')).single.id,
+          'sv03.5-151',
+        );
+      },
+    );
+    test(
       'keeps printings of an OCR-damaged name and skips digital cards',
       () async {
         var requests = 0;

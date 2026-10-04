@@ -34,6 +34,6 @@ Für eine GitHub-Pages-Aktualisierung den **gesamten** Inhalt von `flutter_app/b
 
 ## Prüfung dieser Änderung
 
-48 Flutter-Tests bestanden, `flutter analyze` ohne Befunde und Release-Webbuild erfolgreich. Der Browser-Fototest mit Glurak-ex aus 151, 199/165, lieferte die richtige Karte als ersten Bildtreffer. Physische iOS-/Android-Kameras müssen zusätzlich auf den jeweiligen Geräten geprüft werden.
+49 Flutter-Tests bestanden, `flutter analyze` ohne Befunde und Release-Webbuild erfolgreich. Der Browser-Fototest auf der öffentlichen GitHub-Pages-App mit Glurak-ex aus 151, 199/165, lieferte die richtige Karte als ersten Bildtreffer. Physische iOS-/Android-Kameras müssen zusätzlich auf den jeweiligen Geräten geprüft werden.
 
 Unabhängiges Fanprojekt. Kartendaten und Bilder stammen von [TCGdex](https://www.tcgdex.net/); die Rechte an Pokémon und den Kartengrafiken liegen bei ihren jeweiligen Rechteinhabern.

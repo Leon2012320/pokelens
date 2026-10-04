@@ -95904,7 +95904,7 @@ case 2:return A.F(o.at(-1),r)}})
 return A.H($async$$1,r)},
 $S:212}
 A.a37.prototype={
-$1(a){return a.length>=2},
+$1(a){return a.length!==0},
 $S:35}
 A.a38.prototype={
 $0(){var s=0,r=A.I(t.Xj),q,p=this,o,n,m
@@ -95931,11 +95931,14 @@ $1(a){var s=a.f
 return s!=null&&!B.c.p(s,"/tcgp/")},
 $S:125}
 A.a39.prototype={
-$0(){var s,r,q,p,o,n=A.aEX(this.a.b)
+$0(){var s,r,q,p,o,n,m=A.aEX(this.a.b)
 for(s=this.b,s=A.c2(s,s.r,A.k(s).c),r=s.$ti.c,q=4;s.A();){p=s.d
 if(p==null)p=r.a(p)
-o=A.aZ0(p,n)
-if(o<=(p.length<5?1:3)&&o<q)q=o}return q},
+o=A.aZ0(p,m)
+p=p.length
+if(p===1)n=0
+else n=p<5?1:3
+if(o<=n&&o<q)q=o}return q},
 $S:71}
 A.a3a.prototype={
 $2(a,b){return B.i.bs(a.b,b.b)},
